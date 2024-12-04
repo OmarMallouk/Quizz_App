@@ -8,7 +8,7 @@ import scoreReducer from './dataSlice';
 
 const store = configureStore({
     reducer:{
-        scoreSlice: scoreReducer,
+        scoreCount: scoreReducer,
     }
 })
 const root = ReactDOM.createRoot(document.getElementById('root'));

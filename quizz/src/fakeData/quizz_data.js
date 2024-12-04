@@ -1,4 +1,4 @@
-[
+const mockData =[
     {
       id: 1,
       title: "General Knowledge Quiz",
@@ -21,3 +21,5 @@
       ],
     },
   ];
+
+  export default mockData;

@@ -5,7 +5,7 @@ const initialState = {
 }
 
 const scoreSlice = createSlice({
-    name:"scoreSlice",
+    name:"scoreCount",
     initialState,
     reducers:{
         incrementByAnswers:(state,action) =>{
