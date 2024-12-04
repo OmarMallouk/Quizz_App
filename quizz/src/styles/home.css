@@ -1,0 +1,14 @@
+body{
+    background-color: antiquewhite;
+}
+
+.intro{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.quiz1>button{
+    font-size: 30px;
+    font-weight: bold;
+    
+}
