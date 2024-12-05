@@ -12,4 +12,24 @@ const useQuestions = (mockData) =>{
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+
+    const handleSubmit = () => {
+        if (userAnswer === currentQuestion.answer) {
+          dispatch(incrementByAnswers(currentQuestion.points));
+        }
+        if (questionIndex < questions.length - 1) {
+          setQuestionIndex(questionIndex + 1);
+        } else {
+          setTimeout(() => {
+            alert(`Quiz finished! Your total score is ${score + currentQuestion.points}`);
+            navigate("/");
+          }, 100);
+        }
+        setUserAnswer("");
+      };
+    
+      const handleChange = (e) => {
+        setUserAnswer(e.target.value);
+      };
+
 }
