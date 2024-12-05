@@ -32,4 +32,14 @@ const useQuestions = (mockData) =>{
         setUserAnswer(e.target.value);
       };
 
-}
+return {
+    questionIndex,
+    userAnswer,
+    currentQuestion,
+    handleSubmit,
+    handleChange,
+    score
+  };
+};
+
+export default useQuestions;

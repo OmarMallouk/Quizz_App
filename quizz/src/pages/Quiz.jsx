@@ -6,9 +6,15 @@ import { incrementByAnswers } from "../dataSlice";
 import mockData from "../fakeData/quizz_data";
 import Navbar from "./Navbar";
 import { useNavigate } from 'react-router-dom';
+import useQuestions from "../hooks/useQuestions";
 
 
 const Quiz = ()=>{
+  const { questionIndex,
+    userAnswer,
+    currentQuestion,
+    handleSubmit,
+    handleChange,score} = useQuestions(mockData);
 
 
 const isAnswerSelected = userAnswer !== "";
