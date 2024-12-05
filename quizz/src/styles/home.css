@@ -12,3 +12,22 @@ body{
     font-weight: bold;
     
 }
+
+.quiz1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+  }
+  
+  .MuiButton-root {
+    background-color: #ff5722 !important; 
+    color: #fff !important; 
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  
+  .MuiButton-root:hover {
+    background-color: #e64a19 !important; 
+  }

@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useContext} from "react";
+import '@fontsource/roboto/300.css';
+import Button from '@mui/material/Button';
 import axios from "axios";
 import "../styles/home.css"
 import { useNavigate } from 'react-router-dom';
@@ -18,7 +20,7 @@ const Home = ()=>{
       <h1 className="intro">Ready to test your skills ?</h1>
 
       <div className="quiz1">
-        <button onClick={handleGo}>Start the quizzz</button>
+        <Button  variant="contained"  onClick={handleGo}>Start the quizzz</Button>
       </div>
     </div>
   );
