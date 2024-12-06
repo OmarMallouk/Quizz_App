@@ -25,5 +25,41 @@
     color: #444;
   }
   
-
   
+  .container li {
+    margin: 10px 0;
+  }
+  
+  .container label {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+
+  .container input {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+  }
+  
+  .container button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .container button:hover:not(:disabled) {
+    background-color: #e64a19;
+  }
