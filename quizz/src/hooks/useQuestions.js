@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { incrementByAnswers } from "../dataSlice";
+import { incrementByAnswers, resetScore } from "../dataSlice";
 
 const useQuestions = (mockData) =>{
     const [questionIndex, setQuestionIndex] = useState(0);
@@ -32,12 +32,17 @@ const useQuestions = (mockData) =>{
         setUserAnswer(e.target.value);
       };
 
+      const handleDelete = () =>{
+        dispatch(resetScore());
+      }
+
 return {
     questionIndex,
     userAnswer,
     currentQuestion,
     handleSubmit,
     handleChange,
+    handleDelete,
     score
   };
 };

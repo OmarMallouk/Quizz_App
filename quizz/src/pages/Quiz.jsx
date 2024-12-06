@@ -17,7 +17,7 @@ const Quiz = ()=>{
     userAnswer,
     currentQuestion,
     handleSubmit,
-    handleChange,score} = useQuestions(mockData);
+    handleChange,handleDelete,score} = useQuestions(mockData);
 
 
 const isAnswerSelected = userAnswer !== "";
@@ -61,6 +61,7 @@ const isAnswerSelected = userAnswer !== "";
         )}
 
         <button onClick={handleSubmit} disabled={!isAnswerSelected}>Submit</button>
+        <button onClick={handleDelete} >Delete</button>
       </div>
     </div>
   );

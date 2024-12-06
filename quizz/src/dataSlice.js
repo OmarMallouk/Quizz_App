@@ -11,8 +11,11 @@ const scoreSlice = createSlice({
         incrementByAnswers:(state,action) =>{
             state.value += action.payload
         },
+        resetScore:(state)=>{
+            state.value = 0
+        },
     }
 })
 
-export const {incrementByAnswers} = scoreSlice.actions;
+export const {incrementByAnswers,resetScore} = scoreSlice.actions;
 export default scoreSlice.reducer;
