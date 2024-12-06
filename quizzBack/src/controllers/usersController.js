@@ -30,3 +30,24 @@ export const getUser = async (req,res) => {
     }
 };
 
+
+export const createUser = async (req,res) =>{
+    const {username, password} = req.body;
+
+
+    try{
+        if(!username || !password){
+            return res.status(500).send({
+                message: "Username and password required!"
+            })
+        }
+        const user = await Users.create({
+            username,
+            password
+        });
+        return res.json(user);
+
+    }catch(error){
+        console.log(error.message)
+    }
+}
