@@ -19,12 +19,6 @@ const Quiz = ()=>{
     handleSubmit,
     handleChange,handleDelete,score} = useQuestions(mockData);
 
-
-    useEffect(()=>{
-      
-            },[handleDelete]);
-
-
 const isAnswerSelected = userAnswer !== "";
 
 
@@ -32,9 +26,7 @@ const isAnswerSelected = userAnswer !== "";
        <div className="container">
           <Navbar/>
   
-          <h1>{mockData[0].title}</h1>
-     
-
+      <h1>{mockData[0].title}</h1>
       <div className="questions">
         <p className="question">Q: {currentQuestion.question}</p>
 
@@ -46,8 +38,6 @@ const isAnswerSelected = userAnswer !== "";
                 <Radio  name="answer"
                     value={option}
                     onChange={handleChange}>
-                    
-                   
                     </Radio>
                   {option}
                 </label>

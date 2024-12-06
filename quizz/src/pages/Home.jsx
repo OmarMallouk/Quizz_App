@@ -14,8 +14,6 @@ const Home = ()=>{
 }
 
     return(
-        
-
     <div>
       <h1 className="intro">Ready to test your skills ?</h1>
 

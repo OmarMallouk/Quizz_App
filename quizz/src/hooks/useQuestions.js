@@ -36,9 +36,7 @@ const useQuestions = (mockData) =>{
         setUserAnswer(""); 
         dispatch(resetScore());
       }
-
    
-
 return {
     questionIndex,
     userAnswer,

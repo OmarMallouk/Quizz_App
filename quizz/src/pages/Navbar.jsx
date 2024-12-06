@@ -7,8 +7,6 @@ import "../styles/navbar.css"
 const Navbar = () =>{
     let totalScore = useSelector(state=>state.scoreCount.value)
 
-
-
     return(
 
 <div className="totalScore">
