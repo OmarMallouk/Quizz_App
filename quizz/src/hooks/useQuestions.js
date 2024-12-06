@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { incrementByAnswers, resetScore } from "../dataSlice";
@@ -22,7 +22,6 @@ const useQuestions = (mockData) =>{
         } else {
           setTimeout(() => {
             alert(`Quiz finished! Your total score is ${score + currentQuestion.points}`);
-            navigate("/");
           }, 100);
         }
         setUserAnswer("");
@@ -33,8 +32,12 @@ const useQuestions = (mockData) =>{
       };
 
       const handleDelete = () =>{
+        setQuestionIndex(0);
+        setUserAnswer(""); 
         dispatch(resetScore());
       }
+
+   
 
 return {
     questionIndex,
