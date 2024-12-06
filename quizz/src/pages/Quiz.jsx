@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useContext} from "react";
 import axios from "axios";
-import "../styles/home.css"
+// import "../styles/home.css"
+import "../styles/quiz.css"
 import {useSelector,useDispatch} from "react-redux";
 import { incrementByAnswers } from "../dataSlice";
 import mockData from "../fakeData/quizz_data";
+import RadioGroup from '@mui/material/RadioGroup';
+import Radio from '@mui/material/Radio';
 import Navbar from "./Navbar";
 import { useNavigate } from 'react-router-dom';
 import useQuestions from "../hooks/useQuestions";
@@ -21,26 +24,26 @@ const isAnswerSelected = userAnswer !== "";
 
 
     return(
-       <div>
+       <div className="container">
           <Navbar/>
   
           <h1>{mockData[0].title}</h1>
-      <p>Score: {score}</p>
+     
 
-      <div>
-        <p>Q: {currentQuestion.question}</p>
+      <div className="questions">
+        <p className="question">Q: {currentQuestion.question}</p>
 
         {currentQuestion.type === "multiple-choice" && (
           <ul>
             {currentQuestion.options.map((option, index) => (
               <li key={index}>
                 <label>
-                  <input
-                    type="radio"
-                    name="answer"
+                <Radio  name="answer"
                     value={option}
-                    onChange={handleChange}
-                  />
+                    onChange={handleChange}>
+                    
+                   
+                    </Radio>
                   {option}
                 </label>
               </li>
