@@ -63,9 +63,25 @@ export const createQuiz = async (req, res) => {
       if (!updatedQuiz) {
         return res.status(404).send({ message: "Quiz not found" });
       }
-      return res.status(200).json(updatedQuiz);
+      return res.json(updatedQuiz);
     } catch (error) {
       console.error(error);
       return res.status(500).send({ message: "Error updating quiz" });
+    }
+  };
+
+
+  export const deleteQuiz = async (req, res) => {
+    const { id } = req.params;
+  
+    try {
+      const deletedQuiz = await Quiz.findByIdAndDelete(id);
+      if (!deletedQuiz) {
+        return res.status(404).send({ message: "Quiz not found" });
+      }
+      return res.json(deletedQuiz);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).send({ message: "Error deleting quiz" });
     }
   };
