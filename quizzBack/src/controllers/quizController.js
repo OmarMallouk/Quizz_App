@@ -29,8 +29,6 @@ export const getQuiz = async (req,res) => {
     }
 };
 
-
-
 export const createQuiz = async (req, res) => {
     const { title, questions } = req.body;
   
@@ -48,5 +46,26 @@ export const createQuiz = async (req, res) => {
     } catch (error) {
       console.error(error);
       return res.status(500).send({ message: "Something went wrong while creating the quiz" });
+    }
+  };
+
+
+  export const updateQuiz = async (req, res) => {
+    const { id } = req.params;
+    const { title, questions } = req.body;
+  
+    try {
+      const updatedQuiz = await Quiz.findByIdAndUpdate(
+        id,
+        { title, questions },
+        { new: true }
+      );
+      if (!updatedQuiz) {
+        return res.status(404).send({ message: "Quiz not found" });
+      }
+      return res.status(200).json(updatedQuiz);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).send({ message: "Error updating quiz" });
     }
   };
