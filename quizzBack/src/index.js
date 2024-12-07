@@ -7,6 +7,7 @@ const app = express();
 
 app.use(express.json());
 app.use("/users", userRoutes);
+app.use("/quiz", userRoutes);
 
 
 app.listen(8080, async () => {
