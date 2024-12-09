@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { User } from "../models/user.model.js";
+import { Users } from "../models/users.model.js";
 
 export const authMiddleware = async (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -25,7 +25,7 @@ export const authMiddleware = async (req, res, next) => {
 
     const id = payload.userId;
 
-    const user = await User.findById(id);
+    const user = await Users.findById(id);
 
     req.user = user;
 
